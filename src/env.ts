@@ -16,6 +16,11 @@ expand(
 const EnvSchema = z.object({
 	NODE_ENV: z.string(),
 	BACKEND_PORT: z.coerce.number().default(6000),
+	DATABASE_NAME: z.string(),
+	DATABASE_PASSWORD: z.string(),
+	DATABASE_HOST: z.string(),
+	DATABASE_PORT: z.coerce.number(),
+	DATABASE_USER: z.string(),
 });
 
 export type Env = z.infer<typeof EnvSchema>;

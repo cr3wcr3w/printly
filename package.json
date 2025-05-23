@@ -9,19 +9,30 @@
 		"biome:check": "biome check .",
 		"package:check": "npx npm-check-updates",
 		"package:upgrade": "npx npm-check-updates --interactive --format group",
-		"package:unused": "npx depcheck"
+		"package:unused": "npx depcheck",
+		"db:generate": "npx drizzle-kit generate",
+		"db:migrate": "npx drizzle-kit migrate",
+		"db:push": "npx drizzle-kit push",
+		"db:studio": "npx drizzle-kit studio"
 	},
 	"dependencies": {
 		"@hono/node-server": "^1.14.2",
 		"dotenv": "^16.5.0",
 		"dotenv-expand": "^12.0.2",
+		"drizzle-orm": "^0.43.1",
 		"hono": "^4.7.10",
+		"pg": "^8.16.0",
 		"zod": "^3.25.23"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/node": "^20.11.17",
-		"tsx": "^4.7.1",
+		"@types/pg": "^8.15.2",
+		"drizzle-kit": "^0.31.1",
+		"tsx": "^4.19.4",
 		"typescript": "^5.8.3"
+	},
+	"engines": {
+		"node": "~22"
 	}
 }
