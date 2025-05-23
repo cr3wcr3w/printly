@@ -1,18 +1,24 @@
 {
-  "name": "printly",
-  "type": "module",
-  "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.14.2",
-    "hono": "^4.7.10"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.17",
-    "tsx": "^4.7.1",
-    "typescript": "^5.8.3"
-  }
+	"name": "printly",
+	"type": "module",
+	"scripts": {
+		"dev": "tsx watch src/index.ts",
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"biome:write": "biome check --write .",
+		"biome:check": "biome check .",
+		"package:check": "npx npm-check-updates",
+		"package:upgrade": "npx npm-check-updates --interactive --format group",
+		"package:unused": "npx depcheck"
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.14.2",
+		"hono": "^4.7.10"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "^20.11.17",
+		"tsx": "^4.7.1",
+		"typescript": "^5.8.3"
+	}
 }
