@@ -12,17 +12,17 @@
 		"package:unused": "npx depcheck",
 		"db:generate": "npx drizzle-kit generate",
 		"db:migrate": "npx drizzle-kit migrate",
-		"db:push": "npx drizzle-kit push",
 		"db:studio": "npx drizzle-kit studio"
 	},
 	"dependencies": {
 		"@hono/node-server": "^1.14.2",
+		"@hono/zod-openapi": "^0.19.6",
 		"dotenv": "^16.5.0",
 		"dotenv-expand": "^12.0.2",
 		"drizzle-orm": "^0.43.1",
 		"hono": "^4.7.10",
 		"pg": "^8.16.0",
-		"zod": "^3.25.23"
+		"zod": "^3.25.28"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
