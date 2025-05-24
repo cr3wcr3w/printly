@@ -1,13 +1,18 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
-import { notFound } from "./helper/notFound";
-import onError from "./helper/on-error";
+import { notFound } from "./middleware/notFound";
+import onError from "./middleware/on-error";
+import { pinoLogger } from "./middleware/pino-logger";
 
-const app = new OpenAPIHono();
+import type { AppBindings } from "./types";
+
+const app = new OpenAPIHono<AppBindings>();
+app.use(pinoLogger());
 
 app.get("/", (c) => {
 	return c.text("Hello Hono!");
 });
-app.get("/error", () => {
+app.get("/error", (c) => {
+	c.var.logger.info("This is an info log");
 	throw new Error("This is an error");
 });
 
