@@ -6,11 +6,11 @@ import { pinoLogger } from "../middleware/pino-logger";
 import type { AppBindings } from "./types";
 
 export function createApp() {
-    const app = new OpenAPIHono<AppBindings>();
-    app.use(pinoLogger());
+	const app = new OpenAPIHono<AppBindings>();
+	app.use(pinoLogger());
 
-    app.notFound(notFound);
-    app.onError(onError);
+	app.notFound(notFound);
+	app.onError(onError);
 
-    return app
+	return app;
 }
